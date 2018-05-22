@@ -2,9 +2,10 @@
 
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PropTypes from "prop-types";
+import type { Match } from "react-router-dom";
 import Landing from "./Landing";
 import Search from "./Search";
+import Details from "./Details";
 import preload from "../data.json";
 
 const FourOhFour = () => <h1>404</h1>;
@@ -14,23 +15,17 @@ const App = () => (
     <div className="app">
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/search" component={props => <Search shows={preload.shows} {...props} />} />
+        <Route path="/search" component={Search} />
         <Route
           path="/details/:id"
-          component={props => <Details show={preload.shows.find(show => props.match.params.id === show.imdbID)} />}
+          component={(props: { match: Match }) => (
+            <Details show={preload.shows.find(show => props.match.params.id === show.imdbID)} />
+          )}
         />
         <Route component={FourOhFour} />
       </Switch>
     </div>
   </BrowserRouter>
 );
-
-App.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired,
-  }),
-};
 
 export default App;
