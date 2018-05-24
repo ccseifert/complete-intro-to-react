@@ -30,10 +30,7 @@ class ShowCard extends Component {
   render() {
     return (
       <Wrapper to={`/details/${this.props.imdbID}`}>
-        <Image
-          src={`/public/img/posters/${this.props.poster}`}
-          alt={`${this.props.title} Show Poster`}
-        />
+        <Image src={`/public/img/posters/${this.props.poster}`} alt={`${this.props.title} Show Poster`} />
         <div>
           <h3>{this.props.title}</h3>
           <h3>({this.props.year})</h3>
