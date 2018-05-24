@@ -24,7 +24,8 @@
         "jest": true
     },
     "rules": {
-      "func-names": ["error", "as-needed"]
+      "func-names": ["error", "as-needed"],
+      "flowtype/no-types-missing-file-annotation": 0
     }
 }
 

@@ -5,6 +5,7 @@
 <PROJECT_ROOT>/node_modules/table/node_modules/chalk/*
 <PROJECT_ROOT>/node_modules/@babel/code-frame/node_modules/chalk/*
 <PROJECT_ROOT>/node_modules/flow-typed/node_modules/chalk/*
+<PROJECT_ROOT>/flow-typed
 
 [include]
 
